@@ -1,0 +1,534 @@
+/**
+ * file: css/css.css
+ * purpose: styling
+ **/
+
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Lacquer&family=Permanent+Marker&family=Ribeye&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Asimovian&family=Gloock&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Asimovian&family=Bebas+Neue&family=Gloock&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Asimovian&family=Bebas+Neue&family=Bevan:ital@0;1&family=Gloock&display=swap");
+
+/* Margin og kanter fjernes i visse browsere */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variable: farver og typografi*/
+:root {
+
+  /* farver */
+  --farve_1: #FDFDFD; /* Lys */
+  --farve_2: #2e2e2e; /* Mørkest */
+  --farve_3: #F9C7E1; /* Lys Pink */
+  --farve_4: #CD3488; /* Mørk Pink */
+  --farve_5: #faecf3; /* Bleg Pink*/
+
+  /* typografi */
+  --broedtekst: Verdana, Geneva, Tahoma, sans-serif;
+  --titel: Gloock  , serif;
+  --overskrifter: 'bevan', cursive;
+  --underskrifter: 'bebas neue', cursive;
+
+  /* kolonnebredde */
+  --treKolonner: 33%;
+}
+
+/* Body farver og fonte til resten af siden */
+body {
+  font-family: var(--broedtekst);
+  background-color: var(--farve_1);
+  color: var(--farve_2);
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* TYPOGRAFI */
+h1{
+  font-family: var(--titel);
+    font-size: 4rem;
+}
+
+h2 {
+  font-family: var(--overskrifter);
+  margin-top: 2rem;
+  margin-bottom: .5rem;
+   text-shadow:  -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000,
+     0px -1px 0 #000,
+     1px  0px 0 #000,
+     0px  1px 0 #000,
+    -1px  0px 0 #000; 
+}
+
+h3 {
+  font-family: var(--underskrifter);
+  font-size: 2rem;
+}
+
+h4 {
+  font-family: var(--underskrifter);
+  font-size: 1.5rem;
+}
+
+p {
+  font-family: var(--broedtekst);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+/* LAYOUT: */
+
+.flex {
+  display: flex; /* Brug flexbox */
+  justify-content: flex-end; /* Juster placering af elementer */
+  gap: 10px; /* Juster afstand mellem elementer */
+  margin-left:2rem ; /* Juster afstand fra venstre kant */
+}
+
+/* Topnavigationen */
+nav {
+  min-height: 3vh; /* Mellemrum til toppen af siden */
+  background-color: transparent; /* Gør nav transparent */
+  position: absolute;            /* Overlay hero section */
+  justify-self: flex-end; /* Placer til højre */
+  margin-right: 2rem; /* afstand fra højre kant */
+  position: fixed; /* Fastgør til toppen ved scroll */
+}
+
+nav ul {
+  list-style-type: none; /* fjern bullets */
+  padding: 0; /* fjern padding */
+  margin: 0; /* fjern margins */
+}
+
+nav ul li {
+  min-width: 40px; /* Gør klikbare områder større */
+}
+
+nav a {
+  color: var(--farve_3); /* ændr link farve */
+  text-decoration: none; /* fjern understregning */
+  font-size: 2rem; /* Gør nav tekst større */
+}
+
+/* Logo */
+#logo {
+width: 100px; /* Gør klikbare områder større */
+}
+
+/* Main Header */
+#main {
+  display: flex; /* Brug flexbox */
+  flex-direction: column; /*Placer elementer vertikalt */
+  justify-content: center;   /* Verticalt i midten */
+  align-items: flex-start;   /* Placer til vesntre */
+  height: 95vh;              /* Side højde */
+  padding-left: 2rem;        /* Ekstra plads til venstre */
+  min-height: 21vh; /* min-højde: kan udviddes når nødvendigt */
+  align-content: center; /* centrer indhold */
+  text-align: center; /* centrer tekst */
+  background-color: var(--farve_1); /* baggrundsfarve */
+  color: var(--farve_1); /* tekstfarve */
+  list-style-type: none; /* fjern bullets */
+
+  /* baggrundsbillede   background-image: url("../images/image\ 23.jpg"); /* billede */
+  background-size: cover; /* dæk hele headeren */
+  background-position: center; /* placering af billede */
+  background-repeat: no-repeat; /* gentag ikke billedet */
+  background-color: transparent; /* Gør baggrund transparent */
+}
+
+.produktnavn {
+  margin-bottom: -40px;
+  margin-left: 1rem;
+  color: #ffffff;
+  font-family: var(--overskrifter);
+  text-shadow:  -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000,
+     0px -1px 0 #000,
+     1px  0px 0 #000,
+     0px  1px 0 #000,
+    -1px  0px 0 #000; 
+}
+
+.cta {
+  margin-left: 1rem;
+  margin-top: 1rem; /* afstand over */
+  background-color: var(--farve_1); /* baggrundsfarve */
+  color: var(--farve_2); /* tekstfarve */
+  padding: 0.8rem 1.5rem; /* indvendig afstand */
+  border-radius: 16px; /* afrundede hjørner */
+  font-size: 2rem; /* tekststørrelse */
+  font-family: var(--underskrifter); /* font */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* skyggeeffekt */
+  transition: background-color 0.3s, transform 0.3s; /* overgangseffekt */
+  text-decoration: none; /* fjern understregning */
+  display: inline-block; /* gør det til en blok for bedre klikområde */
+  margin-top: -10px;
+}
+
+.cta:hover {
+  background-color: var(--farve_3); /* ændr baggrundsfarve ved hover */
+  transform: translateY(-3px); /* løft knappen lidt ved hover */
+}
+
+.cta-wrap {
+  position: sticky; /* gør knappen sticky */
+  top: 20px; /* afstand fra toppen når sticky */
+}
+
+
+video#bg-video {
+  position: absolute; /* Absolut positionering */
+  top: 0; /* afstand fra toppen */
+  left: 0; /* afstand fra venstre */
+  width: 100%; /* fuld bredde */
+  height: 100%; /* fuld højde */
+  object-fit: cover; /* dæk hele området */
+  z-index: -1; /* baggrund */
+  opacity: 0.7; /* gennemsigtighed */
+}
+
+.logo img {
+  position: absolute; /* Absolut positionering */
+  top: 1rem; /* afstand fra toppen */
+  left: 50%; /* centrer horisontalt */
+  transform: translate(-50%); /* juster for perfekt centering */
+  text-align: center; /* centrer tekst */
+  width: 20vh; /* bredde */
+  height: auto; /* automatisk højde for at bevare proportioner */
+  list-style-type: none; /* fjern bullets */
+  text-decoration: none; /* fjern understregning */
+}
+
+header h2 {
+  font-size: 3rem; /* stor tekst */
+  margin-bottom: 1rem; /* afstand under */
+  margin-left: 1rem; /* afstand fra venstre */
+  text-align: left; /* venstrejusteret tekst */
+}
+
+/* Buy Header */
+#buy {
+  display: flex; /* Brug flexbox */
+  flex-direction: column; /*Placer elementer vertikalt */
+  justify-content: center;   /* Verticalt i midten */
+  align-items: flex-start;   /* Placer til vesntre */
+  height: 95vh;              /* Side højde */
+  padding-left: 2rem; /* Ekstra plads til venstre */
+  min-height: 21vh; /* min-højde: kan udviddes når nødvendigt */
+  align-content: center; /* centrer indhold */
+  text-align: center; /* centrer tekst */
+  background-color: var(--farve_1); /* baggrundsfarve */
+  color: var(--farve_1); /* tekstfarve */
+  list-style-type: none; /* fjern bullets */
+
+  /* baggrundsbillede   background-image: url("../images/image\ 23.jpg"); /* billede */
+  background-size: cover; /* dæk hele headeren */
+  background-position: center; /* placering af billede */
+  background-repeat: no-repeat; /* gentag ikke billedet */
+  background-color: transparent; /* Gør baggrund transparent */
+}
+
+
+/* Cart */
+#cart {
+  background-color: var(--farve_5);
+}
+
+/* Cart Header */
+#cartheader {
+  display: flex; /* Brug flexbox */
+  justify-content: center;   /* Verticalt i midten */
+  align-items: flex-start;   /* Placer til vesntre */
+  height: 30vh;              /* Side højde */
+  min-height: 20vh; /* min-højde: kan udviddes når nødvendigt */
+  align-content: center; /* centrer indhold */
+  background-color: transparent; /* baggrundsfarve */
+  color: var(--farve_1); /* tekstfarve */
+  list-style-type: none; /* fjern bullets */
+  margin-top: 20vh;
+
+  /* baggrundsbillede   background-image: url("../images/image\ 23.jpg"); /* billede */
+  background-size: cover; /* dæk hele headeren */
+  background-position: center; /* placering af billede */
+  background-repeat: no-repeat; /* gentag ikke billedet */
+  background-color: var(--farve_5); /* Gør baggrund transparent */
+}
+
+
+/* Main */
+main {
+  max-width: 1100px;
+  margin: auto; /* centrer på siden */
+  margin-bottom: 4rem;
+  margin-top: 1.4rem;
+  min-height: 100vh;  
+}
+
+/* Billed Kolonner*/
+.treKolonner1 {
+  width: 100%; /* fuld bredde */
+  display: flex; /* brug flexbox */
+  flex-direction: row; /* placer elementer i række */
+  align-items: center; /* centrer vertikalt */
+  gap: 2rem; /* afstand mellem elementer */
+  background: var(--farve_5); /* baggrundsfarve */
+  padding: 1.5rem; /* indvendig afstand */
+  border-radius: 1rem; /* afrundede hjørner */
+  margin-top: -3rem; /* træk opad */
+  margin-bottom: -3rem; /* træk opad */
+}
+
+.treKolonner2 {
+  width: 100%; /* fuld bredde */
+  display: flex; /* brug flexbox */
+  flex-direction: row-reverse; /* omvendt rækkefølge */
+  align-items: center; /* centrer vertikalt */
+  gap: 2rem; /* afstand mellem elementer */
+  background: var(--farve_5); /* baggrundsfarve */
+  padding: 1.5rem; /* indvendig afstand */
+  border-radius: 1rem; /* afrundede hjørner */
+  margin-bottom: -3rem; /* afstand under */
+}
+
+
+/* Billed form ved koloner */
+.kolonner img {
+  width: 30%; /* bredde */
+  height: auto; /* automatisk højde for at bevare proportioner */
+  border-radius: 10px;
+}
+
+/*Produkt info*/
+#produkt {
+  text-align: center;
+}
+
+.Hvid {
+  position: relative; /* gør den til reference */
+  display: inline-block;
+}
+
+.Hvid img {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.Hvid .price-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--farve_4);
+  color: var(--farve_1);
+  padding: 6px 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  opacity: 0.9;
+}
+
+.Hvid .sale {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background:var(--farve_4);
+  color: var(--farve_1);
+  padding: 6px 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  opacity: 0.9;
+}
+
+.Pink {
+  position: relative; /* gør den til reference */
+  display: inline-block;
+}
+
+.Pink img {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.Pink .price-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--farve_1);
+  color: var(--farve_2);
+  padding: 6px 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  opacity: 0.9;
+}
+
+.Lilla {
+  position: relative; /* gør den til reference */
+  display: inline-block;
+}
+
+.Lilla img {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.Lilla .price-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--farve_1);
+  color: var(--farve_2);
+  padding: 6px 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  opacity: 0.9;
+}
+
+.Grøn {
+  position: relative; /* gør den til reference */
+  display: inline-block;
+}
+
+.Grøn img {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.Grøn .price-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--farve_1);
+  color: var(--farve_2);
+  padding: 6px 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  opacity: 0.9;
+}
+
+
+#produkt img{
+ border-radius: 10px;
+ width: 100%;
+}
+.produkt_titel{
+  margin-bottom: 1rem;
+  margin-top: 6rem;
+  color: var(--farve_2);
+}
+
+.billeder{
+  color: var(--farve_2);
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  margin-left: 4rem;
+  margin-right: 4rem;
+  margin-bottom: 40px;
+  row-gap: 2rem;
+  column-gap: 5rem; /* space between images */;
+  list-style-type: none;  
+}
+
+/* Footer */
+footer {
+  background-color: var(--farve_5);
+  padding: 40px 60px;
+  min-height: 30vh;
+  color: black;
+  font-family: var(--brødtekst-font);
+}
+
+footer table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+footer .col {
+  vertical-align: top;
+  padding-right: 0px;
+}
+
+footer h2.logo {
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+footer h3 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+footer p {
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+footer a {
+  color: black;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.mail {
+  color: rgb(47, 39, 152);
+}
+
+
+/* ØVRIGE HTML-ELEMENTER STYLES */
+/* Her styles, fx: knapper, ikoner, formularer, inputfelter, etc.
+
+Se fx denne side: 
+https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements
+
+Det er ikke nødvendigt at style ethvert tænkeligt HTML-element. Brug din styletile, og overvej hvilke html-elementer du får brug for til din løsning.
+*/
+
+/* RESPONSIVE STYLES */
+/* Når alt fungerer på den store skærm og i fuld bredde, er tiden inde til at afprøve løsningen på andre skærme. Vælg nogen passende breakpoints og brug @media så elementerne automatisk tilpasser sig brugerens mobil, tablet eller storskærm. */
+
+/* Eksempler
+/* Mobile enheder */
+
+/*
+@media (max-width: 600px){
+  body {
+    background-color: aquamarine;
+  }
+  #stemning {
+    display:block;
+  }
+}
+
+/* Tablets, iPads, &c. */
+/*
+@media (min-width: 601px) and (max-width: 1024px){
+  body {
+    background-color: rgb(252, 21, 198);
+  }
+  #stemning {
+    display: block;
+  }  
+}
+*/
